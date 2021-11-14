@@ -1,21 +1,11 @@
+/*
 const eqArrays = function(middleOfArray) {
   if (middleOfArray !== []) {
     return true;
   } else if (middleOfArray === []) {
     return false;
   }
-};
-
-let errorMsg;
-const assertEqual = function(actual, expected) {
-  if (actual !== expected) {
-    errorMsg = `🛑🛑🛑 Assertion Failed: middle is ${expected}`;
-    console.log(errorMsg);
-  } else if (actual === expected) {
-    errorMsg = `✅✅✅ Assertion Passed: middle is ${expected}`;
-    console.log(errorMsg);
-  }
-};
+}; */
 
 const middle = function(array) {
   let midArray = [];
@@ -34,5 +24,4 @@ const middle = function(array) {
   }
 };
 
-assertEqual(eqArrays(middle([1, 2, 3, 4, 5, 6])), true);
-assertEqual(eqArrays(middle([1, 2])), true);
+module.exports = middle;
