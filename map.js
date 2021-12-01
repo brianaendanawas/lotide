@@ -1,19 +1,16 @@
-let errorMsg;
-const assertEqual = function(actual, expected) {
-  if (actual !== expected) {
-    errorMsg = `🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`;
-    console.log(errorMsg);
-  } else if (actual === expected) {
-    errorMsg = `✅✅✅ Assertion Passed: ${actual} === ${expected}`;
-    console.log(errorMsg);
-  }
-};
-
 const eqArrays = function(firstArray, secondArray) {
   if (JSON.stringify(firstArray) === JSON.stringify(secondArray)) {
     return true;
   } else {
     return false;
+  }
+};
+
+const assertArraysEqual = function(array1, array2) {
+  if (eqArrays(array1, array2) === true) {
+    console.log(`✅✅✅ Assertion Passed: ${array1} === ${array2}`);
+  } else if (eqArrays(array1, array2) === false) {
+    console.log(`🛑🛑🛑 Assertion Failed: ${array1} !== ${array2}`);
   }
 };
 
@@ -36,4 +33,6 @@ console.log(results2);
 const results3 = map(names, name => name.length);
 console.log(results3);
 
-assertEqual((eqArrays(names, results1)), false);
+assertArraysEqual(results1, [ 't', 'c', 'c', 'r', 'l' ]);
+assertArraysEqual(results2, [ 'a', 'a', 'o', 'o', 'i' ]);
+assertArraysEqual(results3, [ 8, 5, 4, 4, 4 ]);
