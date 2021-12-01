@@ -1,16 +1,3 @@
-/*
-const assertEqual = require('./assertEqual'); 
-
-const eqArrays = function(firstArray, secondArray) {
-  if (JSON.stringify(firstArray) === JSON.stringify(secondArray)) {
-    return true;
-  } else {
-    return false;
-  }
-};
-
-module.exports = eqArrays; */
-
 const eqArrays = require('./eqArrays');
 
 const assertArraysEqual = function(array1, array2) {
