@@ -1,26 +1,12 @@
-
-let errorMsg;
-const assertEqual = function(actual) {
-  if (actual === undefined) {
-    errorMsg = `🛑🛑🛑 Assertion Failed: ${actual} is undefined`;
-    console.log(errorMsg);
-  } else if (actual !== undefined) {
-    errorMsg = `✅✅✅ Assertion Passed: ${actual} is defined`;
-    console.log(errorMsg);
-  }
-};
-
-/*
-let errorMsg;
 const assertEqual = function(actual, expected) {
   if (actual !== expected) {
-    errorMsg = `🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`;
-    console.log(errorMsg);
+    let errorMsg = `🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`;
+    return errorMsg;
   } else if (actual === expected) {
-    errorMsg = `✅✅✅ Assertion Passed: ${actual} === ${expected}`;
-    console.log(errorMsg);
+    let errorMsg = `✅✅✅ Assertion Passed: ${actual} === ${expected}`;
+    return errorMsg;
   }
-}; */
+};
 
 const eqObjects = function(object1, object2) {
   const keys1 = Object.keys(object1);
@@ -43,17 +29,14 @@ const eqObjects = function(object1, object2) {
 
 const ab = { a: "1", b: "2" };
 const ba = { b: "2", a: "1" };
-assertEqual((eqObjects(ab, ba)), true);
-//eqObjects(ab, ba);
+console.log(assertEqual((eqObjects(ab, ba)), true));
 
 const abc = { a: "1", b: "2", c: "3" };
-assertEqual((eqObjects(ab, abc)), false);
+console.log(assertEqual((eqObjects(ab, abc)), false));
 
 const cd = { c: "1", d: ["2", 3] };
 const dc = { d: ["2", 3], c: "1" };
-assertEqual((eqObjects(cd, dc)), true);
-//eqObjects(cd, dc);
+console.log(assertEqual((eqObjects(cd, dc)), true));
 
 const cd2 = { c: "1", d: ["2", 3, 4] };
-assertEqual((eqObjects(cd, cd2)), false);
-//eqObjects(cd, cd2);
+console.log(assertEqual((eqObjects(cd, cd2)), false));
