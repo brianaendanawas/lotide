@@ -8,13 +8,12 @@ const findKey = function(object, callback) {
   }
 };
 
-let errorMsg;
 const assertEqual = function(actual, expected) {
   if (actual !== expected) {
-    errorMsg = `🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`;
+    let errorMsg = `🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`;
     return errorMsg;
   } else if (actual === expected) {
-    errorMsg = `✅✅✅ Assertion Passed: ${actual} === ${expected}`;
+    let errorMsg = `✅✅✅ Assertion Passed: ${actual} === ${expected}`;
     return errorMsg;
   }
 };
