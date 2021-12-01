@@ -22,5 +22,7 @@ const countLetters = function(sentence) {
   return object;
 };
 
-const result1 = countLetters("um hello");
-assertEqual(result1["u"], 1);
+const result1 = countLetters("hello my name is briana");
+assertEqual(result1["i"], 2);
+assertEqual(result1["a"], 3);
+assertEqual(result1["y"], 1);
